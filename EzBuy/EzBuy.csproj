@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0BDE5DB7-5EC5-4AE0-B739-E1361A9B0BEB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EzBuy</RootNamespace>
+    <AssemblyName>EzBuy</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AWSSDK.Core">
+      <HintPath>..\..\..\Reference\AWSSDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.DynamoDBv2">
+      <HintPath>..\..\..\Reference\AWSSDK.DynamoDBv2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="class\bi.cs" />
+    <Compile Include="class\GridConstant.cs" />
+    <Compile Include="dal\master_dal.cs" />
+    <Compile Include="dal\producttype_dal.cs" />
+    <Compile Include="dal\purchase_dal.cs" />
+    <Compile Include="dal\saleinput_dal.cs" />
+    <Compile Include="dal\buyer_dal.cs" />
+    <Compile Include="dal\sale_dal.cs" />
+    <Compile Include="dal\stock_dal.cs" />
+    <Compile Include="entity\Producttype.cs" />
+    <Compile Include="entity\SaleInput.cs" />
+    <Compile Include="entity\Sale.cs" />
+    <Compile Include="ProfitManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProfitManager.Designer.cs">
+      <DependentUpon>ProfitManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurchaseManager.Designer.cs">
+      <DependentUpon>PurchaseManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rate.Designer.cs">
+      <DependentUpon>Rate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StockManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockManager.Designer.cs">
+      <DependentUpon>StockManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductManager.Designer.cs">
+      <DependentUpon>ProductManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalog.Designer.cs">
+      <DependentUpon>Catalog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="class\aws.cs" />
+    <Compile Include="class\db.cs" />
+    <Compile Include="class\focus.cs" />
+    <Compile Include="class\quotebroker.cs" />
+    <Compile Include="class\realtimequote.cs" />
+    <Compile Include="class\stock.cs" />
+    <Compile Include="class\util.cs" />
+    <Compile Include="class\writelog.cs" />
+    <Compile Include="dal\product_dal.cs" />
+    <Compile Include="dal\category_dal.cs" />
+    <Compile Include="entity\Category.cs" />
+    <Compile Include="entity\Product.cs" />
+    <Compile Include="entity\Purchase.cs" />
+    <Compile Include="entity\Stock.cs" />
+    <Compile Include="SaleManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SaleManager.Designer.cs">
+      <DependentUpon>SaleManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Catalog.resx">
+      <DependentUpon>Catalog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfitManager.resx">
+      <DependentUpon>ProfitManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseManager.resx">
+      <DependentUpon>PurchaseManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rate.resx">
+      <DependentUpon>Rate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockManager.resx">
+      <DependentUpon>StockManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductManager.resx">
+      <DependentUpon>ProductManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaleManager.resx">
+      <DependentUpon>SaleManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
